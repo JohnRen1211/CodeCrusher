@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CodeCrush</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Logo and "Welcome to CodeCrush" header -->
+    <div class="logocode">
+      <img src="img/LogoCode.png" alt="CodeCrush Logo" class="logo" />
+      <h1>Welcome to CodeCrush</h1>
+    </div>
+
+    <!-- Registration form -->
+    <div id="registration" class="flex-center flex-column">
+      <!-- Username input form -->
+      <input type="text" id="username" name="username" placeholder="Enter your username" required />
+      <div class="btn-container">
+        <button class="btn start-btn" onclick="startGame()">
+          <img src="img/play-circle.png" alt="Start Playing" />
+        </button>
+        <a class="btn" href="highscores.html">
+          <img src="img/score.png" alt="High Scores" />
+        </a>
+        <a class="btn" href="index.html">
+          <img src="img/home.png" alt="Guide" />
+        </a>
+        <a class="btn" href="review.html">
+          <img src="img/book-open-cover.png" alt="Review" />
+        </a>
+        <a class="btn" href="guide.html">
+          <img src="img/bulb.png" alt="Guide" />
+        </a>
+      </div>        
+    </div>
+  </div>
+  <script src="js/game.js"></script>
+  <script>
+    function startGame() {
+      const username = document.getElementById("username").value;
+      if (username.trim() === "") {
+        alert("Please enter a valid username.");
+      } else {
+        // Save the username in local storage before redirecting to the game page
+        localStorage.setItem("username", username);
+        const url = "game.html";
+        window.location.href = url;
+      }
+    }
+  </script>
+</body>
+</html>

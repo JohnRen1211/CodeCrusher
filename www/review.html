@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture Reviews</title>
+  <a class="btn" href="home.html">Go Home</a>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: aqua;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .button {
+      padding: 0.75rem 1.5rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    .review {
+      margin: 1rem 0;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lecture Reviews</h1>
+  </header>
+  <main>
+    <div class="button-container">
+      <button class="button" onclick="showChapter(1)">Chapter 1</button>
+      <button class="button" onclick="showChapter(2)">Chapter 2</button>
+      <!-- Add more buttons for other chapters as needed -->
+    </div>
+
+    <div id="chapter1" class="review" style="display: none;">
+      <h2>Chapter 1: Introduction to Programming</h2>
+      <p>This chapter covers the basics of programming concepts, including variables, data types, and control structures.</p>
+      <p>Overall Rating: 4.5/5</p>
+      <!-- You can add more content here, such as user reviews, ratings, or video embeds -->
+    </div>
+
+    <div id="chapter2" class="review" style="display: none;">
+      <h2>Chapter 2: Functions and Loops</h2>
+      <p>In this chapter, you will learn about functions and looping constructs in programming languages.</p>
+      <p>Overall Rating: 4.2/5</p>
+      <!-- You can add more content here, such as user reviews, ratings, or video embeds -->
+    </div>
+
+    <!-- Add more div elements for other chapters as needed -->
+
+  </main>
+
+  <script>
+    function showChapter(chapterNumber) {
+      const allChapters = document.querySelectorAll('.review');
+      allChapters.forEach(chapter => {
+        chapter.style.display = 'none';
+      });
+
+      const selectedChapter = document.getElementById(`chapter${chapterNumber}`);
+      if (selectedChapter) {
+        selectedChapter.style.display = 'block';
+      }
+    }
+  </script>
+  
+</body>
+</html>
